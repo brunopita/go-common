@@ -284,3 +284,17 @@ func RemoveDuplicateUintptr(elements []uintptr) []uintptr {
 	}
 	return result
 }
+
+func FilterStringSlice(itens []string, f func(string) bool) []string {
+	var result []string
+	for _, e := range itens {
+		if f(e) {
+			result = append(result, e)
+		}
+	}
+	return result
+}
+
+func IsEmptyString(element string) bool {
+	return element == ""
+}
