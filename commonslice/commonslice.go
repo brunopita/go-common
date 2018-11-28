@@ -292,7 +292,12 @@ func FilterStringSlice(itens []string, f func(string) bool) []string {
 			result = append(result, e)
 		}
 	}
+
 	return result
+}
+
+func NotEmptyString(element string) bool {
+	return element != ""
 }
 
 func IsEmptyString(element string) bool {
